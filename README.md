@@ -31,10 +31,10 @@ On Windows, use python solver.py.
 Type the board one row at a time, four letters per row:
 
 ```
-Row 1: brio
-Row 2: endy
-Row 3: wemc
-Row 4: ndts
+Row 1: ihyn
+Row 2: vlsi
+Row 3: rnpt
+Row 4: shee
 ```
 
 It prints the total possible score, then every word grouped by length.
