@@ -1,5 +1,7 @@
 import os
 
+# sets dictionary to 'enable1.txt' unless a dictionary is given
+
 folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'wordlists')
 self_provided = os.path.join(folder, 'dictionary.txt')
 enable_path = os.path.join(folder, 'enable1.txt')
@@ -21,6 +23,7 @@ trie = {}
 board = []
 rows = []
 
+# take player input; anything that isn't exactly four letters gets rejected (uppercase is converted to lowercase)
 for row_number in range(1, 5):
     row = input(f'Row {row_number}: ').lower()
 
@@ -35,6 +38,10 @@ for row in rows:
     print(' '.join(row))
 print()
 
+# create trie by either following an existing branch or creating a new one;
+# '*': True marks the end of a complete word (but doens't end the branch)
+
+
 for word in dictionary:
     current = trie
     for char in word:
@@ -43,6 +50,8 @@ for word in dictionary:
         current = current[char]
     current['*'] = True
 
+
+# each tile stores its letter and its neighbors (tiles within one x AND one y, so diagonals count)
 
 def create_board(board):
     x = 1
@@ -71,6 +80,9 @@ class Letters:
         self.y = y
         self.neighbors = []
 
+# set means only unique words are added; using a trie means branches are pruned the
+# moment a new letter can't be used to create ANY word
+
 def solver(board):
     words_list = set()
     x = create_board(board)
@@ -86,6 +98,9 @@ def solver(board):
             words_list.add(''.join(cul_letters))
 
         for neighbor in letter.neighbors:
+
+            # each tile can only be used once per word
+
             if neighbor not in used:
                 helper(neighbor, current_trie, cul_letters, used)
         
@@ -97,6 +112,8 @@ def solver(board):
 solved_list = list(solver(board))
 solved_list = sorted(solved_list, key=lambda x: (-len(x), x))
 solved_list_scores = {}
+
+# solved list re-organized based on length
 
 for words in solved_list:
     if len(words) not in solved_list_scores:
