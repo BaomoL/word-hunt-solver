@@ -9,8 +9,6 @@ Finds every word on a 4x4 Word Hunt (GamePigeon) board, sorted from longest to s
 
 *Playing "sheepishly" (+3000), the longest word found by the solver*
 
-*Output using Collins Scrabble Words*
-
 ## How it works
 
 The word list is loaded into a **trie** (prefix tree). The solver then runs a **depth-first search** from every tile, moving to any of the 8 neighboring tiles without reusing one. As soon as the letters so far aren't the start of any real word, that path is dropped. This pruning is what makes it fast enough to search every path on the board instantly.
