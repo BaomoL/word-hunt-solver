@@ -39,7 +39,7 @@ for row in rows:
 print()
 
 # create trie by either following an existing branch or creating a new one;
-# '*': True marks the end of a complete word (but doens't end the branch)
+# '*': True marks the end of a complete word (but doesn't end the branch)
 
 
 for word in dictionary:
