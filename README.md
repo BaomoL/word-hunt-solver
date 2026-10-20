@@ -5,7 +5,9 @@ Finds every word on a 4x4 Word Hunt (GamePigeon) board, sorted from longest to s
 
 | Board | Solver output |
 | --- | --- |
-| <img width="300" alt="Word Hunt board" src="https://github.com/user-attachments/assets/84d6edfd-7fa8-4741-b451-08ac4e9b3921" /> | <img width="300" alt="Solver output" src="https://github.com/user-attachments/assets/80c7f35f-90db-447c-abb6-b56ce8d45472" /> |
+| <img width="420" alt="Playing sheepishly in Word Hunt" src="https://github.com/user-attachments/assets/b5c65e5d-24fd-4608-8862-1a22e5118e9f" /> | <img width="239" alt="Solver output" src="https://github.com/user-attachments/assets/158eda6b-617f-4eea-b70f-7f530f2347ea" /> |
+
+*Playing "sheepishly" (+3000), the longest word found by the solver*
 
 *Output using Collins Scrabble Words*
 
@@ -56,3 +58,5 @@ To use your own word list instead, save it as `wordlists/dictionary.txt`. It sho
 | 7 | 1800 |
 | 8 | 2200 |
 | 9+ | 2600, plus 400 for each extra letter |
+
+
